@@ -36,10 +36,12 @@ const TabsWrapper = styled.div`
 
 const TabsDesktopContent = styled.div`
   display: none;
+  margin-bottom: 40px;
+  border-radius: 0 0 20px 20px;
+  background-color: #fff;
 
   @media screen and (min-width: 960px) {
     display: flex;
-    margin-bottom: 40px;
   }
 `
 
