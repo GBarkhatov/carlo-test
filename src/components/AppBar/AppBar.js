@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
@@ -15,13 +15,17 @@ import NotificationsIcon from '@material-ui/icons/Notifications'
 import MoreIcon from '@material-ui/icons/MoreVert'
 import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
-import Divider from '@material-ui/core/Divider'
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
+import DashboardIcon from '@material-ui/icons/Dashboard'
+import LanguageIcon from '@material-ui/icons/Language'
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank'
+import PieChartOutlinedIcon from '@material-ui/icons/PieChartOutlined'
+import DesktopWindowsOutlinedIcon from '@material-ui/icons/DesktopWindowsOutlined'
+import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined'
+import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined'
+import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -56,41 +60,48 @@ const useStyles = makeStyles((theme) => ({
 const routes = [
   {
     title: 'Dashboard',
-    to: 'dashboard'
+    to: 'dashboard',
+    Icon: DashboardIcon
   },
   {
     title: 'Sites',
-    to: 'sites'
+    to: 'sites',
+    Icon: LanguageIcon
   },
   {
     title: 'Campaigns',
-    to: 'campaigns'
+    to: 'campaigns',
+    Icon: CheckBoxOutlineBlankIcon
   },
   {
     title: 'Analytics',
-    to: 'analytics'
+    to: 'analytics',
+    Icon: PieChartOutlinedIcon
   },
   {
     title: 'Live View',
-    to: 'live-view'
+    to: 'live-view',
+    Icon: DesktopWindowsOutlinedIcon
   },
   {
     title: 'users',
-    to: 'users'
+    to: 'users',
+    Icon: PeopleAltOutlinedIcon
   },
   {
     title: 'Organizations',
-    to: 'organizations'
+    to: 'organizations',
+    Icon: BusinessCenterOutlinedIcon
   },
   {
     title: 'Settings',
-    to: 'settings'
+    to: 'settings',
+    Icon: SettingsOutlinedIcon
   }
 ]
 
 const AppBarComponent = () => {
   const classes = useStyles()
-  const theme = useTheme()
   const [anchorEl, setAnchorEl] = React.useState(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
 
@@ -101,10 +112,6 @@ const AppBarComponent = () => {
 
   const handleDrawerOpen = () => {
     setOpen(true)
-  }
-
-  const handleDrawerClose = () => {
-    setOpen(false)
   }
 
   const toggleDrawer = (event) => {
@@ -252,24 +259,15 @@ const AppBarComponent = () => {
         onClose={toggleDrawer}
       >
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+          {routes.map(({ title, to, Icon }) => (
+            <>
+              <ListItem button key={title}>
+                <ListItemIcon>
+                  <Icon />
+                </ListItemIcon>
+                <ListItemText primary={title} />
+              </ListItem>
+            </>
           ))}
         </List>
       </Drawer>
