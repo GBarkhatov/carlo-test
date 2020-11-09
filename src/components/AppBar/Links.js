@@ -23,6 +23,7 @@ const Button = styled(Link)`
     props.match === 'yes' ? '#F8F5F5' : '#FFFFFF'};
   font-weight: ${(props) => (props.match === 'yes' ? 700 : 400)};
   font-size: 0.9rem;
+  border-right: 1px solid #E5E5E5;
 
   &:hover {
     filter: brightness(110%);
