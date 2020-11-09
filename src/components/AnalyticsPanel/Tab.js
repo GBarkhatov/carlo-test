@@ -1,7 +1,13 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const Component = styled.div``
+const Component = styled.div`
+  @media screen and (min-width: 960px) {
+    &:last-of-type > div {
+      border-radius: 0 20px 0 0;
+    }
+  }
+`
 
 const TopPart = styled.div`
   background: #f6f6f6;
