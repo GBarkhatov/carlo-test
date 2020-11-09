@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-import tabs from './tabs'
 
 import Tab from './Tab'
+import tabs from './tabs'
+import FilterPanel from '../FilterPanel/FilterPanel'
+import filters from './filters'
 
 const Component = styled.div`
   padding: 56px 0;
@@ -41,6 +43,9 @@ const AnalyticsPanel = () => {
         >
           <span>{title} content</span>
         </Tab>
+      ))}
+      {filters.map(({ title, data }) => (
+        <FilterPanel key={title} title={title} data={data} />
       ))}
     </Component>
   )
