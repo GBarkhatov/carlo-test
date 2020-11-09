@@ -8,7 +8,7 @@ import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 
 const Component = styled.div`
-  background: #fff;
+  background: #f5f5f5;
 
   &:not(:last-of-type) {
     margin-bottom: 20px;
@@ -16,13 +16,11 @@ const Component = styled.div`
 
   @media screen and (min-width: 960px) {
     min-width: 350px;
-    flex: 1;
     background-color: #fff;
     border-radius: 20px;
-    margin-right: 40px;
 
     &:not(:last-of-type) {
-      margin-bottom: 40px;
+      margin-bottom: 0;
     }
   }
 `

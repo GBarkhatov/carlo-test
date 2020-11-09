@@ -56,9 +56,15 @@ const RightPanel = styled.div`
 
 const Filters = styled.div`
   @media screen and (min-width: 960px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
   }
 `
 
