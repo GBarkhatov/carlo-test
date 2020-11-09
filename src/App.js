@@ -10,11 +10,13 @@ import LiveView from './routes/LiveView/LiveView'
 import Users from './routes/Users/Users'
 import Organizations from './routes/Organizations/Organizations'
 import Settings from './routes/Settings/Settings'
+import AppBar from './components/AppBar/AppBar'
 
 const Component = styled.div``
 
 const App = () => (
   <Component>
+    <AppBar />
     <Router>
       <Dashboard path='/' />
       <Sites path='sites' />

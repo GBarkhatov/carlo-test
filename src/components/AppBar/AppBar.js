@@ -85,7 +85,7 @@ const routes = [
     Icon: DesktopWindowsOutlinedIcon
   },
   {
-    title: 'users',
+    title: 'Users',
     to: 'users',
     Icon: PeopleAltOutlinedIcon
   },
@@ -113,6 +113,10 @@ const AppBarComponent = () => {
 
   const handleDrawerOpen = () => {
     setOpen(true)
+  }
+
+  const handleDrawerClose = () => {
+    setOpen(false)
   }
 
   const toggleDrawer = (event) => {
@@ -262,7 +266,7 @@ const AppBarComponent = () => {
         <List>
           {routes.map(({ title, to, Icon }) => (
             <>
-              <ListItem button key={title} component={Link} to={to}>
+              <ListItem button key={title} component={Link} to={to} onClick={handleDrawerClose}>
                 <ListItemIcon>
                   <Icon />
                 </ListItemIcon>
