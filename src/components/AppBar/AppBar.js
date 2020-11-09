@@ -1,4 +1,4 @@
-import React, { setState } from 'react'
+import React from 'react'
 import { fade, makeStyles, useTheme } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -14,7 +14,6 @@ import AccountCircle from '@material-ui/icons/AccountCircle'
 import MailIcon from '@material-ui/icons/Mail'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import MoreIcon from '@material-ui/icons/MoreVert'
-
 import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
 import Divider from '@material-ui/core/Divider'
@@ -28,6 +27,9 @@ import InboxIcon from '@material-ui/icons/MoveToInbox'
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1
+  },
+  appBar: {
+    backgroundColor: '#101010'
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -195,7 +197,7 @@ const AppBarComponent = () => {
 
   return (
     <div className={classes.grow}>
-      <AppBar position='static'>
+      <AppBar position='static' className={classes.appBar}>
         <Toolbar>
           <IconButton
             edge='start'
@@ -207,7 +209,7 @@ const AppBarComponent = () => {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant='h6' noWrap>
-            Material-UI
+            <strong>Better</strong>Meter
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -224,13 +226,8 @@ const AppBarComponent = () => {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label='show 4 new mails' color='inherit'>
-              <Badge badgeContent={4} color='secondary'>
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label='show 17 new notifications' color='inherit'>
-              <Badge badgeContent={17} color='secondary'>
+            <IconButton aria-label='show 9 new notifications' color='inherit'>
+              <Badge badgeContent={9} color='secondary'>
                 <NotificationsIcon />
               </Badge>
             </IconButton>
