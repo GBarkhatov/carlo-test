@@ -48,7 +48,7 @@ const TabsDesktopContent = styled.div`
 `
 
 const RightPanel = styled.div`
-  border-left: 1px solid #E5E5E5;
+  border-left: 1px solid #e5e5e5;
 `
 
 const AnalyticsPanel = () => {
@@ -77,7 +77,9 @@ const AnalyticsPanel = () => {
         ))}
       </TabsWrapper>
       <TabsDesktopContent>
-        <LeftPanel />
+        <LeftPanel
+          data={tabs.filter((tab) => tab.title === open)[0].leftPanelData}
+        />
         <RightPanel>RightPanel</RightPanel>
       </TabsDesktopContent>
       {filters.map(({ title, data }) => (
