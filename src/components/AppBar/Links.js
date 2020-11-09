@@ -18,9 +18,10 @@ const Button = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: ${(props) => (props.match ? '#1A2437' : '#5D6677')};
-  background-color: ${(props) => (props.match ? '#F8F5F5' : '#FFFFFF')};
-  font-weight: ${(props) => (props.match ? 700 : 400)};
+  color: ${(props) => (props.match === 'yes' ? '#1A2437' : '#5D6677')};
+  background-color: ${(props) =>
+    props.match === 'yes' ? '#F8F5F5' : '#FFFFFF'};
+  font-weight: ${(props) => (props.match === 'yes' ? 700 : 400)};
   font-size: 0.9rem;
 
   &:hover {
@@ -31,7 +32,7 @@ const Button = styled(Link)`
   &:visited,
   &:link,
   &:active {
-    color: ${(props) => (props.match ? '#1A2437' : '#5D6677')};
+    color: ${(props) => (props.match === 'yes' ? '#1A2437' : '#5D6677')};
   }
 `
 
@@ -47,25 +48,23 @@ const IconWrapper = styled.span`
   }
 `
 
-const Links = ({ path }) => (
-  <Component>
-    {routes.map(({ title, to, Icon }) => {
-      console.log('window.location.pathname', window.location.pathname)
-      console.log('to', to)
-      return (
+const Links = ({ path }) => {
+  return (
+    <Component>
+      {routes.map(({ title, to, Icon }) => (
         <Button
           key={title}
           to={to === '/' ? '/' : `/${to}`}
-          match={path === to || path === `/${to}`}
+          match={path === to || path === `/${to}` ? 'yes' : 'no'}
         >
           <IconWrapper>
             <Icon />
           </IconWrapper>
           {title}
         </Button>
-      )
-    })}
-  </Component>
-)
+      ))}
+    </Component>
+  )
+}
 
 export default Links
