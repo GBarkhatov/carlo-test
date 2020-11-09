@@ -188,7 +188,7 @@ const AppBarComponent = ({ path }) => {
               button
               key={title}
               component={Link}
-              to={to}
+              to={`/${to}`}
               onClick={handleDrawerClose}
             >
               <ListItemIcon>
