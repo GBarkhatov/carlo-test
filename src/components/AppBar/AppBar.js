@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components/macro'
 import { Link } from '@reach/router'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 const routes = [
   {
     title: 'Dashboard',
-    to: 'dashboard',
+    to: '/',
     Icon: DashboardIcon
   },
   {
@@ -100,6 +101,16 @@ const routes = [
     Icon: SettingsOutlinedIcon
   }
 ]
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:visited,
+  &:link,
+  &:active {
+    color: #fff;
+  }
+`
 
 const AppBarComponent = () => {
   const classes = useStyles()
@@ -218,7 +229,9 @@ const AppBarComponent = () => {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant='h6' noWrap>
-            <strong>Better</strong>Meter
+            <StyledLink to='/'>
+              <strong>Better</strong>Meter
+            </StyledLink>
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
@@ -266,7 +279,13 @@ const AppBarComponent = () => {
         <List>
           {routes.map(({ title, to, Icon }) => (
             <>
-              <ListItem button key={title} component={Link} to={to} onClick={handleDrawerClose}>
+              <ListItem
+                button
+                key={title}
+                component={Link}
+                to={to}
+                onClick={handleDrawerClose}
+              >
                 <ListItemIcon>
                   <Icon />
                 </ListItemIcon>
