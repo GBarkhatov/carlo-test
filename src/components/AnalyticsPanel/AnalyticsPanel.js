@@ -49,6 +49,8 @@ const TabsDesktopContent = styled.div`
 
 const RightPanel = styled.div`
   border-left: 1px solid #e5e5e5;
+  height: 600px;
+  width: 100%;
 `
 
 const AnalyticsPanel = () => {
@@ -80,7 +82,9 @@ const AnalyticsPanel = () => {
         <LeftPanel
           data={tabs.filter((tab) => tab.title === open)[0].leftPanelData}
         />
-        <RightPanel>RightPanel</RightPanel>
+        <RightPanel>
+          <Graph data={tabs.filter((tab) => tab.title === open)[0].graph} />
+        </RightPanel>
       </TabsDesktopContent>
       {filters.map(({ title, data }) => (
         <FilterPanel key={title} title={title} data={data} />
