@@ -111,7 +111,7 @@ const FilterPanel = ({ title, data }) => (
     <SitesWrapper>
       <Text>Sites:</Text>
       <StyledFormControl>
-        <Select value=''>
+        <Select>
           <MenuItem value='all'>All</MenuItem>
           <MenuItem value='today'>Today</MenuItem>
           <MenuItem value='recents'>Recents</MenuItem>
