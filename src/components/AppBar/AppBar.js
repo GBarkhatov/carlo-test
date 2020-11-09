@@ -37,12 +37,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#101010'
   },
   menuButton: {
-    marginRight: theme.spacing(2)
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block'
+    display: 'block',
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up('md')]: {
+      display: 'none'
     }
   },
   sectionDesktop: {
