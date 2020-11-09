@@ -21,6 +21,10 @@ const Header = styled.h2`
   }
 `
 
+const TabsWrapper = styled.div`
+  margin-bottom: 20px;
+`
+
 const AnalyticsPanel = () => {
   const [open, setOpen] = useState(tabs[0].title)
 
@@ -31,19 +35,21 @@ const AnalyticsPanel = () => {
   return (
     <Component>
       <Header>Analytics</Header>
-      {tabs.map(({ title, Icon, text, change }) => (
-        <Tab
-          key={title}
-          title={title}
-          Icon={Icon}
-          text={text}
-          change={change}
-          open={title === open}
-          onClick={handleTabClick}
-        >
-          <span>{title} content</span>
-        </Tab>
-      ))}
+      <TabsWrapper>
+        {tabs.map(({ title, Icon, text, change }) => (
+          <Tab
+            key={title}
+            title={title}
+            Icon={Icon}
+            text={text}
+            change={change}
+            open={title === open}
+            onClick={handleTabClick}
+          >
+            <span>{title} content</span>
+          </Tab>
+        ))}
+      </TabsWrapper>
       {filters.map(({ title, data }) => (
         <FilterPanel key={title} title={title} data={data} />
       ))}
