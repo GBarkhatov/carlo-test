@@ -14,8 +14,9 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 
+import Links from './Links'
 import logo from './logo.svg'
 import routes from './routes'
 import user from './user.png'
@@ -46,7 +47,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex'
   },
   appBar: {
-    backgroundColor: '#101010'
+    backgroundColor: '#101010',
+    boxShadow: 'none'
   },
   menuButton: {
     display: 'block',
@@ -160,13 +162,11 @@ const AppBarComponent = () => {
           </div>
         </Toolbar>
       </AppBar>
+      <Links />
       <Drawer
         className={classes.drawer}
         anchor='left'
         open={open}
-        classes={{
-          paper: classes.drawerPaper
-        }}
         onClose={toggleDrawer}
       >
         <List>
