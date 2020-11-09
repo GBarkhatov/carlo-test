@@ -7,6 +7,11 @@ const TopPart = styled.div`
   background: #f6f6f6;
   border-bottom: 1px solid #fff;
   padding: 28px;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(102%);
+  }
 `
 
 const Content = styled.div`
@@ -68,8 +73,8 @@ const Tab = ({ children, title, Icon, text, change, onClick, open }) => {
   }
 
   return (
-    <Component onClick={onClick(title)}>
-      <TopPart>
+    <Component>
+      <TopPart onClick={onClick(title)}>
         <Title>{title}</Title>
         <InnerWrapper>
           <IconWrapper>
