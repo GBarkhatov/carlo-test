@@ -6,7 +6,6 @@ import tabs from './tabs'
 import FilterPanel from '../FilterPanel/FilterPanel'
 import filters from './filters'
 import Graph from './Graph'
-import graphData from './graph-data'
 
 const Component = styled.div`
   padding: 56px 0;
@@ -38,7 +37,7 @@ const AnalyticsPanel = () => {
     <Component>
       <Header>Analytics</Header>
       <TabsWrapper>
-        {tabs.map(({ title, Icon, text, change }) => (
+        {tabs.map(({ title, Icon, text, change, graph }) => (
           <Tab
             key={title}
             title={title}
@@ -48,7 +47,7 @@ const AnalyticsPanel = () => {
             open={title === open}
             onClick={handleTabClick}
           >
-            <Graph data={graphData} />
+            <Graph data={graph} />
           </Tab>
         ))}
       </TabsWrapper>
