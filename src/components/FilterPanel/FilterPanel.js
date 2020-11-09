@@ -8,10 +8,20 @@ import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 
 const Component = styled.div`
-  background: #f6f6f6;
+  background: #fff;
 
   &:not(:last-of-type) {
     margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 960px) {
+    min-width: 400px;
+    background-color: #fff;
+    border-radius: 20px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
   }
 `
 

@@ -9,7 +9,7 @@ import Graph from './Graph'
 import LeftPanel from './LeftPanel'
 
 const Component = styled.div`
-  padding: 56px 0;
+  padding: 56px 0 0 0;
   width: 100%;
 `
 
@@ -53,6 +53,14 @@ const RightPanel = styled.div`
   width: 100%;
 `
 
+const Filters = styled.div`
+  @media screen and (min-width: 960px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+  }
+`
+
 const AnalyticsPanel = () => {
   const [open, setOpen] = useState(tabs[0].title)
 
@@ -86,9 +94,11 @@ const AnalyticsPanel = () => {
           <Graph data={tabs.filter((tab) => tab.title === open)[0].graph} />
         </RightPanel>
       </TabsDesktopContent>
-      {filters.map(({ title, data }) => (
-        <FilterPanel key={title} title={title} data={data} />
-      ))}
+      <Filters>
+        {filters.map(({ title, data }) => (
+          <FilterPanel key={title} title={title} data={data} />
+        ))}
+      </Filters>
     </Component>
   )
 }
