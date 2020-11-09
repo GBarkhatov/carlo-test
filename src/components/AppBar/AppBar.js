@@ -11,9 +11,7 @@ import Menu from '@material-ui/core/Menu'
 import MenuIcon from '@material-ui/icons/Menu'
 import SearchIcon from '@material-ui/icons/Search'
 import AccountCircle from '@material-ui/icons/AccountCircle'
-import MailIcon from '@material-ui/icons/Mail'
 import NotificationsIcon from '@material-ui/icons/Notifications'
-import MoreIcon from '@material-ui/icons/MoreVert'
 import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -22,6 +20,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 
 import logo from './logo.svg'
 import routes from './routes'
+import user from './user.png'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -76,11 +75,6 @@ const Logo = styled.img``
 
 const AppBarComponent = () => {
   const classes = useStyles()
-  const [anchorEl, setAnchorEl] = React.useState(null)
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
-
-  const isMenuOpen = Boolean(anchorEl)
-
   const [open, setOpen] = React.useState(false)
 
   const handleDrawerOpen = () => {
@@ -100,23 +94,6 @@ const AppBarComponent = () => {
     }
 
     setOpen(!open)
-  }
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null)
-  }
-
-  const handleMenuClose = () => {
-    setAnchorEl(null)
-    handleMobileMenuClose()
-  }
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget)
   }
 
   return (
@@ -154,7 +131,6 @@ const AppBarComponent = () => {
               aria-label='account of current user'
               aria-controls='primary-search-account-menu'
               aria-haspopup='true'
-              onClick={handleProfileMenuOpen}
               color='inherit'
             >
               <AccountCircle />
@@ -190,18 +166,6 @@ const AppBarComponent = () => {
           ))}
         </List>
       </Drawer>
-      <Menu
-        anchorEl={anchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        id='primary-search-account-menu'
-        keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isMenuOpen}
-        onClose={handleMenuClose}
-      >
-        <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-        <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      </Menu>
     </div>
   )
 }
