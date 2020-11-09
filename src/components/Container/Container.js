@@ -12,8 +12,8 @@ const Component = styled.div`
     min-height: calc(100vh - 64px);
   }
 
-  @media screen and (min-width: 1280px) {
-    min-height: calc(100vh - 64px - 40px);
+  @media screen and (min-width: 960px) {
+    min-height: calc(100vh - 64px - 40px - 71px);
     padding-top: 71px;
   }
 `
