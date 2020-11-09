@@ -15,9 +15,11 @@ const Component = styled.div`
   }
 
   @media screen and (min-width: 960px) {
-    min-width: 400px;
+    min-width: 350px;
+    flex: 1;
     background-color: #fff;
     border-radius: 20px;
+    margin-right: 40px;
 
     &:not(:last-of-type) {
       margin-bottom: 40px;

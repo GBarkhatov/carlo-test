@@ -10,7 +10,8 @@ const Component = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 400px;
+    min-width: 350px;
+    flex: 1;
     background-color: #fcfafa;
     border-radius: 20px;
     margin-bottom: 40px;
