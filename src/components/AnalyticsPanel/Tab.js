@@ -5,11 +5,13 @@ const Component = styled.div``
 
 const TopPart = styled.div`
   background: #e5e5e5;
+  border-bottom: 1px solid #fff;
   padding: 28px;
 `
 
 const Content = styled.div`
   background-color: #fff;
+  padding: 14px 28px;
 `
 
 const InnerWrapper = styled.div`

@@ -5,13 +5,12 @@ import tabs from './tabs'
 import Tab from './Tab'
 
 const Component = styled.div`
-  padding: 56px 20px 0;
+  padding: 56px 0;
   width: 100%;
 `
 
 const Header = styled.h2`
-  margin: 0;
-  margin-bottom: 18px;
+  margin: 0 0 18px 28px;
   font-size: 36px;
   font-weight: 700;
 

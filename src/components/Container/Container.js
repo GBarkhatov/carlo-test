@@ -4,7 +4,9 @@ import styled from 'styled-components/macro'
 const Component = styled.div`
   display: flex;
   min-height: calc(100vh - 56px);
-  background-color: #E5E5E5;
+  /* inconsistencies across the design */
+  /* background-color: #E5E5E5; */
+  background-color: #fff;
 
   @media screen and (min-width: 750px) {
     min-height: calc(100vh - 64px);
