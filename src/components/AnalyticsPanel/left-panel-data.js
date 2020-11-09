@@ -1,4 +1,6 @@
-const items = [
+// TODO not sure how to call it since design is not obvious
+
+const leftPanelData = [
   {
     name: 'GL',
     addition: '⬆️',
@@ -36,3 +38,5 @@ const items = [
     color: '#84868A'
   }
 ]
+
+export default leftPanelData
