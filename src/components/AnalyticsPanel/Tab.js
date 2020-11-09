@@ -30,6 +30,7 @@ const InnerWrapper = styled.div`
 
 const Title = styled.h4`
   margin: 0 0 0 42px;
+  color: #84868A;
 
   @media screen and (min-width: 960px) {
     white-space: nowrap;

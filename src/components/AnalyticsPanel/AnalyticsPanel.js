@@ -29,6 +29,7 @@ const TabsWrapper = styled.div`
     display: flex;
     width: 100%;
     overflow-x: scroll;
+    margin-bottom: 0;
   }
 `
 
@@ -37,6 +38,7 @@ const TabsDesktopContent = styled.div`
 
   @media screen and (min-width: 960px) {
     display: flex;
+    margin-bottom: 40px;
   }
 `
 
@@ -65,9 +67,7 @@ const AnalyticsPanel = () => {
           </Tab>
         ))}
       </TabsWrapper>
-      <TabsDesktopContent>
-        <p>stuff goes here</p>
-      </TabsDesktopContent>
+      <TabsDesktopContent>stuff goes here</TabsDesktopContent>
       {filters.map(({ title, data }) => (
         <FilterPanel key={title} title={title} data={data} />
       ))}
