@@ -17,6 +17,10 @@ const TopPart = styled.div`
 const Content = styled.div`
   background-color: #fff;
   height: 256px;
+
+  @media screen and (min-width: 960px) {
+    display: none;
+  }
 `
 
 const InnerWrapper = styled.div`
@@ -26,6 +30,11 @@ const InnerWrapper = styled.div`
 
 const Title = styled.h4`
   margin: 0 0 0 42px;
+
+  @media screen and (min-width: 960px) {
+    white-space: nowrap;
+    overflow: hidden;
+  }
 `
 
 const IconWrapper = styled.div`

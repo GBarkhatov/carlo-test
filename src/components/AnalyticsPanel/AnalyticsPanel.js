@@ -24,6 +24,20 @@ const Header = styled.h2`
 
 const TabsWrapper = styled.div`
   margin-bottom: 20px;
+
+  @media screen and (min-width: 960px) {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+  }
+`
+
+const TabsDesktopContent = styled.div`
+  display: none;
+
+  @media screen and (min-width: 960px) {
+    display: flex;
+  }
 `
 
 const AnalyticsPanel = () => {
@@ -51,6 +65,9 @@ const AnalyticsPanel = () => {
           </Tab>
         ))}
       </TabsWrapper>
+      <TabsDesktopContent>
+        <p>stuff goes here</p>
+      </TabsDesktopContent>
       {filters.map(({ title, data }) => (
         <FilterPanel key={title} title={title} data={data} />
       ))}
