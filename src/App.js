@@ -3,6 +3,14 @@ import styled from 'styled-components/macro'
 
 const Component = styled.div``
 
-const App = () => <Component>Inside App</Component>
+const App = () => (
+  <Component>
+    {/* AppBar */}
+    {/* Analytics */}
+    {/* FilterPanel - MostActiveSites */}
+    {/* FilterPanel - MostVisitedSites */}
+    {/* FilterPanel - TopEvents */}
+  </Component>
+)
 
 export default App
