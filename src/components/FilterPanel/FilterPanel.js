@@ -3,6 +3,10 @@ import styled from 'styled-components/macro'
 
 import IconButton from '@material-ui/core/IconButton'
 import MoreIcon from '@material-ui/icons/MoreVert'
+import InputLabel from '@material-ui/core/InputLabel'
+import MenuItem from '@material-ui/core/MenuItem'
+import FormControl from '@material-ui/core/FormControl'
+import Select from '@material-ui/core/Select'
 
 const Component = styled.div`
   background: #f6f6f6;
@@ -28,7 +32,24 @@ const Header = styled.h4`
 const StyledIconButton = styled(IconButton)`
   width: 48px;
   height: 48px;
-  color: #84868A;
+  color: #84868a;
+`
+
+const SitesWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const Text = styled.p`
+  margin: 0;
+  font-size: 18px;
+  color: #bdbdbd;
+  font-weight: 500;
+`
+
+const StyledFormControl = styled(FormControl)`
+  min-width: 50px;
+  margin-left: 10px;
 `
 
 const FilterPanel = ({ title, data }) => (
@@ -39,6 +60,16 @@ const FilterPanel = ({ title, data }) => (
         <MoreIcon />
       </StyledIconButton>
     </TopPart>
+    <SitesWrapper>
+      <Text>Sites:</Text>
+      <StyledFormControl>
+        <Select>
+          <MenuItem value='all'>All</MenuItem>
+          <MenuItem value='today'>Today</MenuItem>
+          <MenuItem value='recents'>Recents</MenuItem>
+        </Select>
+      </StyledFormControl>
+    </SitesWrapper>
   </Component>
 )
 
