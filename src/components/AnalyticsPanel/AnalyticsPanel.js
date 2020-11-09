@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import tabs from './tabs'
 
@@ -20,15 +20,31 @@ const Header = styled.h2`
   }
 `
 
-const AnalyticsPanel = () => (
-  <Component>
-    <Header>Analytics</Header>
-    {tabs.map(({ title, Icon, text, change }) => (
-      <Tab key={title} title={title} Icon={Icon} text={text} change={change}>
-        <span>{title} content</span>
-      </Tab>
-    ))}
-  </Component>
-)
+const AnalyticsPanel = () => {
+  const [open, setOpen] = useState(tabs[0].title)
+
+  const handleTabClick = (title) => () => {
+    setOpen(title)
+  }
+
+  return (
+    <Component>
+      <Header>Analytics</Header>
+      {tabs.map(({ title, Icon, text, change }) => (
+        <Tab
+          key={title}
+          title={title}
+          Icon={Icon}
+          text={text}
+          change={change}
+          open={title === open}
+          onClick={handleTabClick}
+        >
+          <span>{title} content</span>
+        </Tab>
+      ))}
+    </Component>
+  )
+}
 
 export default AnalyticsPanel

@@ -54,7 +54,7 @@ const NegativeChange = styled.p`
   color: #f73859;
 `
 
-const Tab = ({ children, title, Icon, text, change }) => {
+const Tab = ({ children, title, Icon, text, change, onClick, open }) => {
   const getChange = (change) => {
     if (change > 0) {
       return <PositiveChange>+{change}%</PositiveChange>
@@ -66,7 +66,7 @@ const Tab = ({ children, title, Icon, text, change }) => {
   }
 
   return (
-    <Component>
+    <Component onClick={onClick(title)}>
       <TopPart>
         <Title>{title}</Title>
         <InnerWrapper>
@@ -77,7 +77,7 @@ const Tab = ({ children, title, Icon, text, change }) => {
           {getChange(change)}
         </InnerWrapper>
       </TopPart>
-      <Content>{children}</Content>
+      {open && <Content>{children}</Content>}
     </Component>
   )
 }
