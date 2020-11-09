@@ -1,6 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
-const theme = createMuiTheme({
+const materialTheme = createMuiTheme({
   typography: {
     fontFamily: [
       'DM Sans',
@@ -12,3 +12,5 @@ const theme = createMuiTheme({
     ].join(',')
   }
 })
+
+export default materialTheme
