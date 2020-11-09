@@ -3,10 +3,10 @@ import styled from 'styled-components/macro'
 
 const Component = styled.div``
 
-const Analytics = () => (
+const AnalyticsPanel = () => (
   <Component>
-    Inside Analytics
+    Inside AnalyticsPanel
   </Component>
 )
 
-export default Analytics
+export default AnalyticsPanel
