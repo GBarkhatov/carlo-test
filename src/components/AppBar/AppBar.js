@@ -27,6 +27,18 @@ const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1
   },
+  growDivider: {
+    flexGrow: 0,
+    [theme.breakpoints.up('md')]: {
+      flexGrow: 1
+    }
+  },
+  logo: {
+    flexGrow: 1,
+    [theme.breakpoints.up('md')]: {
+      flexGrow: 0
+    }
+  },
   appBar: {
     backgroundColor: '#101010'
   },
@@ -53,6 +65,8 @@ const useStyles = makeStyles((theme) => ({
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  display: flex;
+  justify-content: center;
 
   &:visited,
   &:link,
@@ -179,10 +193,10 @@ const AppBarComponent = () => {
           >
             <MenuIcon />
           </IconButton>
-          <StyledLink to='/'>
+          <StyledLink to='/' className={classes.logo}>
             <Logo src={logo} alt='BetterMeter' />
           </StyledLink>
-          <div className={classes.grow} />
+          <div className={classes.growDivider} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label='show 9 new notifications' color='inherit'>
               <SearchIcon />
