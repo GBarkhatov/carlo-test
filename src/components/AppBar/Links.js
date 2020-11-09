@@ -5,8 +5,12 @@ import { Link } from '@reach/router'
 import routes from './routes'
 
 const Component = styled.div`
-  display: flex;
+  display: none;
   width: 100%;
+
+  @media screen and (min-width: 960px) {
+    display: flex;
+  }
 `
 
 const Button = styled(Link)`
@@ -16,6 +20,8 @@ const Button = styled(Link)`
   text-decoration: none;
   color: ${(props) => (props.match ? '#1A2437' : '#5D6677')};
   background-color: ${(props) => (props.match ? '#F8F5F5' : '#FFFFFF')};
+  font-weight: ${(props) => (props.match ? 700 : 400)};
+  font-size: 0.9rem;
 
   &:hover {
     filter: brightness(110%);

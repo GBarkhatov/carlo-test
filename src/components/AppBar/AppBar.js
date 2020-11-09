@@ -37,6 +37,18 @@ const useStyles = makeStyles((theme) => ({
       display: 'block'
     }
   },
+  iconDown: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block'
+    }
+  },
+  userName: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block'
+    }
+  },
   logo: {
     flexGrow: 1,
     [theme.breakpoints.up('md')]: {
@@ -149,12 +161,13 @@ const AppBarComponent = ({ path }) => {
             </IconButton>
             <User>
               <Avatar src={user} alt='Adrian Villa' />
-              <Name>Adrian Villa</Name>
+              <Name className={classes.userName}>Adrian Villa</Name>
               <IconButton
                 aria-label='open user settings'
                 aria-controls='primary-search-account-menu'
                 aria-haspopup='true'
                 color='inherit'
+                className={classes.iconDown}
               >
                 <KeyboardArrowDownIcon />
               </IconButton>
