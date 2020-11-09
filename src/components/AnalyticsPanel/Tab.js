@@ -16,7 +16,7 @@ const TopPart = styled.div`
 
 const Content = styled.div`
   background-color: #fff;
-  padding: 14px 28px;
+  height: 256px;
 `
 
 const InnerWrapper = styled.div`

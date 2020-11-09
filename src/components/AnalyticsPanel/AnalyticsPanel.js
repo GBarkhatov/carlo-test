@@ -5,6 +5,8 @@ import Tab from './Tab'
 import tabs from './tabs'
 import FilterPanel from '../FilterPanel/FilterPanel'
 import filters from './filters'
+import Graph from './Graph'
+import graphData from './graph-data'
 
 const Component = styled.div`
   padding: 56px 0;
@@ -46,7 +48,7 @@ const AnalyticsPanel = () => {
             open={title === open}
             onClick={handleTabClick}
           >
-            <span>{title} content</span>
+            <Graph data={graphData} />
           </Tab>
         ))}
       </TabsWrapper>
