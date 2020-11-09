@@ -94,7 +94,7 @@ const Name = styled.p`
   margin: 0;
 `
 
-const AppBarComponent = () => {
+const AppBarComponent = ({ path }) => {
   const classes = useStyles()
   const [open, setOpen] = React.useState(false)
 
@@ -162,7 +162,7 @@ const AppBarComponent = () => {
           </div>
         </Toolbar>
       </AppBar>
-      <Links />
+      <Links path={path} />
       <Drawer
         className={classes.drawer}
         anchor='left'
@@ -171,20 +171,18 @@ const AppBarComponent = () => {
       >
         <List>
           {routes.map(({ title, to, Icon }) => (
-            <>
-              <ListItem
-                button
-                key={title}
-                component={Link}
-                to={to}
-                onClick={handleDrawerClose}
-              >
-                <ListItemIcon>
-                  <Icon />
-                </ListItemIcon>
-                <ListItemText primary={title} />
-              </ListItem>
-            </>
+            <ListItem
+              button
+              key={title}
+              component={Link}
+              to={to}
+              onClick={handleDrawerClose}
+            >
+              <ListItemIcon>
+                <Icon />
+              </ListItemIcon>
+              <ListItemText primary={title} />
+            </ListItem>
           ))}
         </List>
       </Drawer>

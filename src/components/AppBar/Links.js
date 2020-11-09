@@ -1,11 +1,64 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { Link } from '@reach/router'
 
-const Component = styled.div``
+import routes from './routes'
 
-const Links = () => (
+const Component = styled.div`
+  display: flex;
+  width: 100%;
+`
+
+const Button = styled(Link)`
+  padding: 10px 13px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: ${(props) => (props.match ? '#1A2437' : '#5D6677')};
+  background-color: ${(props) => (props.match ? '#F8F5F5' : '#FFFFFF')};
+
+  &:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+  }
+
+  &:visited,
+  &:link,
+  &:active {
+    color: ${(props) => (props.match ? '#1A2437' : '#5D6677')};
+  }
+`
+
+const IconWrapper = styled.span`
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  & > svg {
+    width: 100%;
+  }
+`
+
+const Links = ({ path }) => (
   <Component>
-    Inside Links
+    {routes.map(({ title, to, Icon }) => {
+      console.log('window.location.pathname', window.location.pathname)
+      console.log('to', to)
+      return (
+        <Button
+          key={title}
+          to={to === '/' ? '/' : `/${to}`}
+          match={path === to || path === `/${to}`}
+        >
+          <IconWrapper>
+            <Icon />
+          </IconWrapper>
+          {title}
+        </Button>
+      )
+    })}
   </Component>
 )
 
