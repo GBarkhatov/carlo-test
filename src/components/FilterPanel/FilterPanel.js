@@ -3,14 +3,12 @@ import styled from 'styled-components/macro'
 
 import IconButton from '@material-ui/core/IconButton'
 import MoreIcon from '@material-ui/icons/MoreVert'
-import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 
 const Component = styled.div`
   background: #f6f6f6;
-  padding: 28px;
 
   &:not(:last-of-type) {
     margin-bottom: 20px;
@@ -21,7 +19,7 @@ const TopPart = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
+  padding: 28px 16px 50px 28px;
 `
 
 const Header = styled.h4`
@@ -38,6 +36,7 @@ const StyledIconButton = styled(IconButton)`
 const SitesWrapper = styled.div`
   display: flex;
   align-items: center;
+  padding: 0 28px 50px 28px;
 `
 
 const Text = styled.p`
@@ -50,6 +49,55 @@ const Text = styled.p`
 const StyledFormControl = styled(FormControl)`
   min-width: 50px;
   margin-left: 10px;
+`
+
+const Items = styled.div`
+  padding: 0 28px 28px 28px;
+`
+
+const Item = styled.div`
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid #e5e5e5;
+  }
+`
+
+const Icon = styled.div`
+  background-color: ${(props) => props.color};
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+`
+
+const Short = styled.p`
+  margin: 0;
+  font-weight: 700;
+  font-size: 13px;
+`
+
+const text = `
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+`
+
+const Name = styled.p`
+  ${text};
+
+  flex: 1;
+`
+
+const Value = styled.p`
+  ${text};
 `
 
 const FilterPanel = ({ title, data }) => (
@@ -70,6 +118,17 @@ const FilterPanel = ({ title, data }) => (
         </Select>
       </StyledFormControl>
     </SitesWrapper>
+    <Items>
+      {data.map(({ name, value, color, short }) => (
+        <Item key={name}>
+          <Icon color={color}>
+            <Short>{short}</Short>
+          </Icon>
+          <Name>{name}</Name>
+          <Value>{value}</Value>
+        </Item>
+      ))}
+    </Items>
   </Component>
 )
 
