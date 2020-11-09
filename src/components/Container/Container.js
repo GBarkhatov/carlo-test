@@ -6,6 +6,7 @@ const Component = styled.div`
   min-height: calc(100vh - 40px - 64px);
   justify-content: center;
   align-items: center;
+  background-color: #E5E5E5;
 `
 
 const Container = ({ children }) => (
