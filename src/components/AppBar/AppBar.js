@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@reach/router'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -261,7 +262,7 @@ const AppBarComponent = () => {
         <List>
           {routes.map(({ title, to, Icon }) => (
             <>
-              <ListItem button key={title}>
+              <ListItem button key={title} component={Link} to={to}>
                 <ListItemIcon>
                   <Icon />
                 </ListItemIcon>
