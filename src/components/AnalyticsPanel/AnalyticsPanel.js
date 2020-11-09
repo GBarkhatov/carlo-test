@@ -39,10 +39,19 @@ const TabsDesktopContent = styled.div`
   margin-bottom: 40px;
   border-radius: 0 0 20px 20px;
   background-color: #fff;
+  min-height: 600px;
 
   @media screen and (min-width: 960px) {
     display: flex;
   }
+`
+
+const LeftPanel = styled.div`
+  padding: 40px 50px 25px 50px;
+`
+
+const RightPanel = styled.div`
+  border-left: 1px solid #E5E5E5;
 `
 
 const AnalyticsPanel = () => {
@@ -70,7 +79,10 @@ const AnalyticsPanel = () => {
           </Tab>
         ))}
       </TabsWrapper>
-      <TabsDesktopContent>stuff goes here</TabsDesktopContent>
+      <TabsDesktopContent>
+        <LeftPanel>LeftPanel</LeftPanel>
+        <RightPanel>RightPanel</RightPanel>
+      </TabsDesktopContent>
       {filters.map(({ title, data }) => (
         <FilterPanel key={title} title={title} data={data} />
       ))}
