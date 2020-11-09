@@ -7,6 +7,7 @@ import FilterPanel from '../FilterPanel/FilterPanel'
 import filters from './filters'
 import Graph from './Graph'
 import LeftPanel from './LeftPanel'
+import AddPanel from '../AddPanel/AddPanel'
 
 const Component = styled.div`
   padding: 56px 0 0 0;
@@ -98,6 +99,7 @@ const AnalyticsPanel = () => {
         {filters.map(({ title, data }) => (
           <FilterPanel key={title} title={title} data={data} />
         ))}
+        <AddPanel />
       </Filters>
     </Component>
   )
