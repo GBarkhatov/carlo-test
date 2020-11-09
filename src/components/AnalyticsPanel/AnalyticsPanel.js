@@ -6,6 +6,7 @@ import tabs from './tabs'
 import FilterPanel from '../FilterPanel/FilterPanel'
 import filters from './filters'
 import Graph from './Graph'
+import LeftPanel from './LeftPanel'
 
 const Component = styled.div`
   padding: 56px 0;
@@ -46,10 +47,6 @@ const TabsDesktopContent = styled.div`
   }
 `
 
-const LeftPanel = styled.div`
-  padding: 40px 50px 25px 50px;
-`
-
 const RightPanel = styled.div`
   border-left: 1px solid #E5E5E5;
 `
@@ -80,7 +77,7 @@ const AnalyticsPanel = () => {
         ))}
       </TabsWrapper>
       <TabsDesktopContent>
-        <LeftPanel>LeftPanel</LeftPanel>
+        <LeftPanel />
         <RightPanel>RightPanel</RightPanel>
       </TabsDesktopContent>
       {filters.map(({ title, data }) => (
