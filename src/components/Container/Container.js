@@ -5,7 +5,7 @@ const Component = styled.div`
   display: flex;
   min-height: calc(100vh - 56px);
   /* inconsistencies across the design */
-  /* background-color: #E5E5E5; */
+  /* background-color: #f6f6f6; */
   background-color: #fff;
 
   @media screen and (min-width: 750px) {

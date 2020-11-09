@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 const Component = styled.div``
 
 const TopPart = styled.div`
-  background: #e5e5e5;
+  background: #f6f6f6;
   border-bottom: 1px solid #fff;
   padding: 28px;
 `

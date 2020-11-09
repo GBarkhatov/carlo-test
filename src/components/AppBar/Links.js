@@ -20,10 +20,10 @@ const Button = styled(Link)`
   text-decoration: none;
   color: ${(props) => (props.match === 'yes' ? '#1A2437' : '#5D6677')};
   background-color: ${(props) =>
-    props.match === 'yes' ? '#E5E5E5' : '#FFFFFF'};
+    props.match === 'yes' ? '#f6f6f6' : '#FFFFFF'};
   font-weight: ${(props) => (props.match === 'yes' ? 700 : 500)};
   font-size: 0.9rem;
-  border-right: 1px solid #E5E5E5;
+  border-right: 1px solid #f6f6f6;
 
   &:hover {
     filter: brightness(110%);
