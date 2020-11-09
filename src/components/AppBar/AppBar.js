@@ -53,6 +53,41 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+const routes = [
+  {
+    title: 'Dashboard',
+    to: 'dashboard'
+  },
+  {
+    title: 'Sites',
+    to: 'sites'
+  },
+  {
+    title: 'Campaigns',
+    to: 'campaigns'
+  },
+  {
+    title: 'Analytics',
+    to: 'analytics'
+  },
+  {
+    title: 'Live View',
+    to: 'live-view'
+  },
+  {
+    title: 'users',
+    to: 'users'
+  },
+  {
+    title: 'Organizations',
+    to: 'organizations'
+  },
+  {
+    title: 'Settings',
+    to: 'settings'
+  }
+]
+
 const AppBarComponent = () => {
   const classes = useStyles()
   const theme = useTheme()
@@ -216,16 +251,6 @@ const AppBarComponent = () => {
         }}
         onClose={toggleDrawer}
       >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </div>
-        <Divider />
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
