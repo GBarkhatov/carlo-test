@@ -6,17 +6,15 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import Badge from '@material-ui/core/Badge'
-import MenuItem from '@material-ui/core/MenuItem'
-import Menu from '@material-ui/core/Menu'
 import MenuIcon from '@material-ui/icons/Menu'
 import SearchIcon from '@material-ui/icons/Search'
-import AccountCircle from '@material-ui/icons/AccountCircle'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 import logo from './logo.svg'
 import routes from './routes'
@@ -73,6 +71,27 @@ const StyledLink = styled(Link)`
 
 const Logo = styled.img``
 
+const User = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  &:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+  }
+`
+
+const Avatar = styled.img`
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+`
+
+const Name = styled.p`
+  margin: 0;
+`
+
 const AppBarComponent = () => {
   const classes = useStyles()
   const [open, setOpen] = React.useState(false)
@@ -126,15 +145,18 @@ const AppBarComponent = () => {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            <IconButton
-              edge='end'
-              aria-label='account of current user'
-              aria-controls='primary-search-account-menu'
-              aria-haspopup='true'
-              color='inherit'
-            >
-              <AccountCircle />
-            </IconButton>
+            <User>
+              <Avatar src={user} alt='Adrian Villa' />
+              <Name>Adrian Villa</Name>
+              <IconButton
+                aria-label='open user settings'
+                aria-controls='primary-search-account-menu'
+                aria-haspopup='true'
+                color='inherit'
+              >
+                <KeyboardArrowDownIcon />
+              </IconButton>
+            </User>
           </div>
         </Toolbar>
       </AppBar>
