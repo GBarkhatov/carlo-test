@@ -12,6 +12,10 @@ const TopPart = styled.div`
     cursor: pointer;
     filter: brightness(102%);
   }
+
+  @media screen and (min-width: 960px) {
+    background: ${(props) => (props.open ? '#fff' : '#FCFAFA')};
+  }
 `
 
 const Content = styled.div`
@@ -30,7 +34,7 @@ const InnerWrapper = styled.div`
 
 const Title = styled.h4`
   margin: 0 0 0 42px;
-  color: #84868A;
+  color: #84868a;
 
   @media screen and (min-width: 960px) {
     white-space: nowrap;
@@ -84,7 +88,7 @@ const Tab = ({ children, title, Icon, text, change, onClick, open }) => {
 
   return (
     <Component>
-      <TopPart onClick={onClick(title)}>
+      <TopPart onClick={onClick(title)} open={open}>
         <Title>{title}</Title>
         <InnerWrapper>
           <IconWrapper>

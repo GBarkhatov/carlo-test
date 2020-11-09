@@ -30,6 +30,7 @@ const TabsWrapper = styled.div`
     width: 100%;
     overflow-x: scroll;
     margin-bottom: 0;
+    border-radius: 20px 20px 0 0;
   }
 `
 
