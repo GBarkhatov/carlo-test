@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
-import Typography from '@material-ui/core/Typography'
 import Badge from '@material-ui/core/Badge'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
@@ -20,14 +19,9 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import DashboardIcon from '@material-ui/icons/Dashboard'
-import LanguageIcon from '@material-ui/icons/Language'
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank'
-import PieChartOutlinedIcon from '@material-ui/icons/PieChartOutlined'
-import DesktopWindowsOutlinedIcon from '@material-ui/icons/DesktopWindowsOutlined'
-import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined'
-import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined'
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined'
+
+import logo from './logo.svg'
+import routes from './routes'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -57,49 +51,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const routes = [
-  {
-    title: 'Dashboard',
-    to: '/',
-    Icon: DashboardIcon
-  },
-  {
-    title: 'Sites',
-    to: 'sites',
-    Icon: LanguageIcon
-  },
-  {
-    title: 'Campaigns',
-    to: 'campaigns',
-    Icon: CheckBoxOutlineBlankIcon
-  },
-  {
-    title: 'Analytics',
-    to: 'analytics',
-    Icon: PieChartOutlinedIcon
-  },
-  {
-    title: 'Live View',
-    to: 'live-view',
-    Icon: DesktopWindowsOutlinedIcon
-  },
-  {
-    title: 'Users',
-    to: 'users',
-    Icon: PeopleAltOutlinedIcon
-  },
-  {
-    title: 'Organizations',
-    to: 'organizations',
-    Icon: BusinessCenterOutlinedIcon
-  },
-  {
-    title: 'Settings',
-    to: 'settings',
-    Icon: SettingsOutlinedIcon
-  }
-]
-
 const StyledLink = styled(Link)`
   text-decoration: none;
 
@@ -109,6 +60,8 @@ const StyledLink = styled(Link)`
     color: #fff;
   }
 `
+
+const Logo = styled.img``
 
 const AppBarComponent = () => {
   const classes = useStyles()
@@ -226,11 +179,9 @@ const AppBarComponent = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant='h6' noWrap>
-            <StyledLink to='/'>
-              <strong>Better</strong>Meter
-            </StyledLink>
-          </Typography>
+          <StyledLink to='/'>
+            <Logo src={logo} alt='BetterMeter' />
+          </StyledLink>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label='show 9 new notifications' color='inherit'>
