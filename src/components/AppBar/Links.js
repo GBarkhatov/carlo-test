@@ -43,7 +43,7 @@ const IconWrapper = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 8px;
+  margin-right: 5px;
   & > svg {
     width: 100%;
   }
